@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+
 // Star Wars Characters (DATA)
 // =============================================================
 var characters = [{
@@ -80,6 +81,6 @@ app.post("/api/new", function(req, res) {
 
 // Starts the server to begin listening
 // =============================================================
-app.listen(PORT, function() {
+app.listen(process.env.PORT || PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
